@@ -1,4 +1,4 @@
-<h1>Edit article</h>
+<h1>Edit article</h1>
 
   <%= form_with(model: @article) do |form| %>
     <% if @article.errors.any? %>
@@ -7,7 +7,7 @@
           <%= pluralize(@article.errors.count, 'error') %> prohibited this article from being saved:
         </h2>
         <ul>
-          <% @artilce.errors.full_messages.each do |msg| %>
+          <% @article.errors.full_messages.each do |msg| %>
             <li>
               <%= msg %>
             </li>
@@ -17,12 +17,12 @@
       <% end %>
 
       <p>
-        <%= form.lable :title %><br />
+        <%= form.label :title %><br />
         <%= form.text_field :title %>
       </p>
 
       <p>
-        <%= form.lable :text %>
+        <%= form.label :text %><br />
         <%= form.text_area :text %>
       </p>
 
@@ -32,4 +32,4 @@
 
   <% end  %>
 
-  <%= link_to 'back', articles_path %>
+  <%= link_to 'Back', articles_path %>
